@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <title>Database</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <table class="table">
+        <thead>
+          <th>Sno</th>
+          <th>email</th>
+          <th>password</th>
+          <th>username</th>
+        </thead>
+        <tbody id="tbody1"></tbody>
+      </table>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        child,
+        onValue,
+        get,
+      } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDT1wlf-bYdsP1p_pPwEOUuVWxD2DmXO6U",
+        authDomain: "web-pizza-6000.firebaseapp.com",
+        databaseURL: "https://web-pizza-6000-default-rtdb.firebaseio.com",
+        projectId: "web-pizza-6000",
+        storageBucket: "web-pizza-6000.appspot.com",
+        messagingSenderId: "562026841250",
+        appId: "1:562026841250:web:491d1efddf27fb3cf483fb",
+        measurementId: "G-0BJSVKTWL1",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getDatabase(app);
+      var stdNo = 0;
+      var tbody = document.getElementById("tbody1");
+      function AddItemToTable(mail, pass, name) {
+        let trow = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+        td1.innerHTML = ++stdNo;
+        td2.innerHTML = mail;
+        td3.innerHTML = pass;
+        td4.innerHTML = name;
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        tbody.appendChild(trow);
+      }
+      function AddAllItemsToTable(user) {
+        stdNo = 0;
+        tbody.innerHTML = "";
+        user.forEach((element) => {
+          AddItemToTable(element.username, element.email, element.password);
+        });
+      }
+      function GetAllDataOnce() {
+        const dbRef = ref(db);
+        get(child(dbRef, "users")).then((snapshot) => {
+          var thing = [];
+          snapshot.forEach((childSnapshot) => {
+            thing.push(childSnapshot.val());
+          });
+          AddAllItemsToTable(thing);
+        });
+      }
+      function GetAllDataRealtime() {
+        const dbRef = ref(db, "users");
+        onValue(dbRef, (snapshot) => {
+          var thing = [];
+          snapshot.forEach((childSnapshot) => {
+            user.push(childSnapshot.val());
+          });
+          AddAllItemsToTable(thing);
+        });
+      }
+      window.onload = GetAllDataOnce;
+    </script>
+  </body>
+</html>

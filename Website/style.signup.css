@@ -1,0 +1,773 @@
+:root {
+    --lightorange: #FF7F3F;
+    --orange: #EA5C2B;
+    --green: #95CD41;
+    --gray: #D9D9D9;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+/* Hamburger */
+
+
+:root {
+    --bar-width: 50px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --foreground: var(--green);
+    --background: white;
+    --hamburger-margin: 10px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    right: var(--hamburger-margin);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: white;
+    --background: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);
+    box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+        rotate var(--animation-timing), translate var(--animation-timing),
+        background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.sidebar {
+    transition: translate var(--animation-timing);
+    translate: -100%;
+    padding: 0.5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    background-color: var(--foreground);
+    color: var(--background);
+    max-width: 10rem;
+    min-height: 100vh;
+}
+
+.hamburger-menu:has(input:checked)+.sidebar {
+    translate: 0;
+}
+
+.sidebar nav div a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Đầu trang */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 30px;
+    top: 7px;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.pep {
+    color: var(--orange);
+}
+
+.piz {
+    color: var(--green);
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    position: absolute;
+    left: 584px;
+    top: 7px;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--orange);
+}
+
+.text.vnn::after {
+    content: url('Images/Vector-ngôn-ngữ.png');
+    position: absolute;
+    top: 35%;
+}
+
+.V {
+    content: url('Images/Tiếng\ Việt.png');
+}
+
+.E {
+    content: url('Images/English.png');
+}
+
+.search {
+    background-color: var(--gray);
+    opacity: 75%;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    width: 299px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 230px;
+    top: 23px;
+}
+
+.search input {
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.search input::placeholder {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+}
+
+.search.icon::after {
+    content: url('Images/Kính\ lúp\ -\ icon.png');
+    position: absolute;
+    top: 10%;
+    transform: translateX(500%);
+}
+
+.acc {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ava {
+    content: url('Images/Ava.png');
+}
+
+.in-out {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.in-out a {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Thanh điều hướng */
+.menu ul {
+    display: flex;
+    align-items: center;
+    gap: 38.5px;
+    list-style: none;
+    position: absolute;
+    top: 95px;
+    left: 16px;
+}
+
+.menu a {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+}
+
+/* Nền  */
+.bg-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+}
+
+.bg-2 {
+    position: absolute;
+    top: 0px;
+    left: 2%;
+    z-index: -3;
+}
+
+.bg-3 {
+    position: absolute;
+    top: 5%;
+    right: 0px;
+    z-index: -2;
+}
+
+.bg-4 {
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: -10;
+}
+
+.bg-5 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -9;
+}
+
+.bg-6 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -5;
+}
+
+.bg-7 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -4;
+}
+
+.bg-8 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -10;
+}
+
+/* Nền mobile */
+.bg1 {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    z-index: -10;
+}
+
+.bg2 {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    z-index: -20;
+}
+
+.bg3 {
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    z-index: -30;
+}
+
+.bg4 {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: -20;
+}
+
+.bg5 {
+    position: absolute;
+    top: 300px;
+    right: 0px;
+    z-index: -20;
+}
+
+.bg6 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -20;
+}
+
+.bg7 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -30;
+}
+
+.bg8 {
+    position: absolute;
+    top: 420px;
+    left: 0px;
+    z-index: -10;
+}
+
+/* Đăng ký */
+.things {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 647px;
+    gap: 21px;
+    transform: translateY(25%);
+}
+
+.signuptext {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    color: rgba(0, 0, 0, 0.75);
+    margin: 0px;
+}
+
+.background {
+    width: 647px;
+    height: 576px;
+    background: rgba(217, 217, 217, 0.75);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 23px;
+}
+
+.background input {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+}
+
+.background input::placeholder {
+    color: #000000;
+    transform: translateX(2%);
+}
+
+.name-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 29px;
+    transform: translateX(8%);
+}
+
+.pass1-vd {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 11px;
+    transform: translateX(8%);
+}
+
+.line-or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23.5px;
+    transform: translateX(8%);
+}
+
+.name input {
+    width: 306px;
+    height: 39px;
+}
+
+.number input {
+    width: 218px;
+    height: 39px;
+}
+
+.email input {
+    width: 553px;
+    height: 39px;
+    transform: translateX(8%);
+}
+
+.email.end::after {
+    content: "@gmail.com";
+    position: absolute;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #5F5F5F;
+    transform: translateX(-80%);
+}
+
+.pass1 input {
+    width: 397px;
+    height: 39px;
+}
+
+.pass2 input {
+    width: 397px;
+    height: 39px;
+    transform: translateX(11%);
+}
+
+.vd {
+    margin: 0px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #5F5F5F;
+}
+
+.smt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.background button {
+    background: #F6D860;
+    width: 265px;
+    height: 58px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+    transform: translateX(17%);
+}
+
+.line {
+    width: 218.5px;
+    height: 0px;
+    border: 3px solid #000000;
+}
+
+.or {
+    margin: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.fb,
+.gg {
+    width: 397px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transform: translateX(13%);
+}
+
+.fb img,
+.gg img {
+    transform: translateX(40%);
+}
+
+.fb a,
+.gg a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-decoration: none;
+}
+
+.fb a {
+    color: #FFFFFF;
+}
+
+.gg a {
+    color: #000000;
+}
+
+.fb {
+    background: #1368D5;
+}
+
+.gg {
+    background: #FFFFFF;
+}
+
+@media screen and (min-width: 1440px) {
+    .Mobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+
+    .Mobile,
+    .lang,
+    .bg-6 {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .Mobile,
+    .lang,
+    .search,
+    .bg-6,
+    .bg-2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .Desktop,
+    .search,
+    .acc,
+    .menu {
+        display: none;
+    }
+
+    .logo a {
+        font-size: 16px;
+    }
+
+    .acc {
+        gap: 3px;
+    }
+
+    .ava {
+        content: url("M-images/Ava.png");
+    }
+
+    .in-out a {
+        font-size: 10px;
+    }
+
+    /* Đăng ký */
+    .container {
+        width: 350px;
+        gap: 21px;
+        transform: translateY(25%);
+        position: absolute;
+        top: 100px;
+    }
+
+    .signuptext {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .background {
+        width: 350px;
+        height: 312px;
+        gap: 11.5px;
+    }
+
+    .background input {
+        font-size: 12px;
+        line-height: 18px;
+        border-radius: 5px;
+    }
+
+    .background input::placeholder {
+        transform: translateX(2%);
+    }
+
+    .name-number {
+        gap: 29px;
+        transform: translateX(8%);
+    }
+
+    .pass1-vd {
+        gap: 11px;
+        transform: translateX(8%);
+    }
+
+    .line-or {
+
+        gap: 15px;
+        transform: translateX(5.4%);
+    }
+
+    .name input {
+        width: 150px;
+        height: 18px;
+    }
+
+    .number input {
+        width: 100px;
+        height: 18px;
+    }
+
+    .email input {
+        width: 255px;
+        height: 18px;
+        transform: translateX(8%);
+    }
+
+    .email.end::after {
+        font-size: 12px;
+        line-height: 18px;
+        top: 31%;
+    }
+
+    .pass1 input {
+        width: 200px;
+        height: 18px;
+    }
+
+    .pass2 input {
+        width: 200px;
+        height: 18px;
+        transform: translateX(11%);
+    }
+
+    .vd {
+
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+
+    .smt {
+        gap: 10px;
+    }
+
+    .background button {
+        width: 130px;
+        height: 28.45px;
+        font-size: 16px;
+        line-height: 24px;
+        transform: translateX(12%);
+    }
+
+    .line {
+        width: 124px;
+    }
+
+    .or {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .fb,
+    .gg {
+        width: 200px;
+        height: 28px;
+        gap: 40px;
+        transform: translateX(10%);
+    }
+
+    .fb img,
+    .gg img {
+        transform: translateX(40%);
+    }
+
+    .fb a,
+    .gg a {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .fb a {
+        color: #FFFFFF;
+    }
+
+    .gg a {
+        color: #000000;
+    }
+
+    .fb {
+        background: #1368D5;
+    }
+
+    .gg {
+        background: #FFFFFF;
+    }
+
+}

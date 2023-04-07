@@ -1,0 +1,520 @@
+:root {
+  --lightorange: #ff7f3f;
+  --orange: #ea5c2b;
+  --green: #95cd41;
+  --gray: #d9d9d9;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Hamburger */
+
+
+:root {
+  --bar-width: 50px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: var(--green);
+  --background: white;
+  --hamburger-margin: 10px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: white;
+  --background: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: -100%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  max-width: 10rem;
+  min-height: 100vh;
+}
+
+.hamburger-menu:has(input:checked)+.sidebar {
+  translate: 0;
+}
+
+.sidebar nav div a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Đầu trang */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 30px;
+  top: 7px;
+}
+
+.logo a {
+  font-weight: 700;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.pep {
+  color: var(--orange);
+}
+
+.piz {
+  color: var(--green);
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  position: absolute;
+  left: 584px;
+  top: 7px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--orange);
+}
+
+.text.vnn::after {
+  content: url("Images/Vector-ngôn-ngữ.png");
+  position: absolute;
+  top: 35%;
+}
+
+.V {
+  content: url("Images/Tiếng\ Việt.png");
+}
+
+.E {
+  content: url("Images/English.png");
+}
+
+.search {
+  background-color: var(--gray);
+  opacity: 75%;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  width: 299px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 280px;
+  top: 23px;
+}
+
+.search input {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 20px;
+}
+
+.search.icon::after {
+  content: url("Images/Kính\ lúp\ -\ icon.png");
+  position: absolute;
+  top: 10%;
+  transform: translateX(500%);
+}
+
+.acc {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ava {
+  content: url("Images/Ava.png");
+}
+
+.in-out {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.in-out a {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Thanh điều hướng */
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 38.5px;
+  position: absolute;
+  top: 95px;
+  left: 16px;
+  list-style: none;
+}
+
+.menu a {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+}
+
+.home.vector::after {
+  content: url("Images/Vector\ trang\ chủ.png");
+  position: absolute;
+  top: 50%;
+  transform: translateX(-100%);
+}
+
+.content {
+  display: flex;
+}
+
+/* Nội dung bên trái */
+.big-word {
+  position: absolute;
+  left: 46px;
+  top: 252px;
+  line-height: 40px;
+}
+
+.nword {
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.word {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--lightorange);
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.small-word {
+  position: absolute;
+  top: 510px;
+  left: 46px;
+  line-height: 0px;
+}
+
+.sdt {
+  display: flex;
+  gap: 6px;
+}
+
+.green {
+  color: var(--green);
+}
+
+.smt {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 610px;
+  left: 16px;
+}
+
+.order {
+  background-color: var(--lightorange);
+  width: 328px;
+  height: 69px;
+  border-radius: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.order.icon::before {
+  content: url("Images/Giỏ\ hàng\ -\ icon.png");
+  position: relative;
+  transform: translateY(5%);
+}
+
+.pizza-small {
+  position: absolute;
+  left: 35px;
+  top: 735px;
+  display: flex;
+  gap: 80px;
+}
+
+.pizza-s {
+  width: 100px;
+  height: 250px;
+  background: rgba(217, 217, 217, 0.75);
+  box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: #000000;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  transform: translateY(-75%);
+}
+
+.btn-small {
+  content: url("Images/Buy.png");
+  transform: translateY(-150%);
+}
+
+/* Nội dung bên phải */
+.pizza {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.m-pizza {
+  position: absolute;
+  top: 20%;
+  right: 0px;
+  z-index: -1;
+}
+
+.download {
+  display: flex;
+  align-items: baseline;
+  gap: 66px;
+  position: absolute;
+  top: 957px;
+  right: 54px;
+}
+
+.background-1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.background-2 {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: -2;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1440px) {
+
+  .Mobile,
+  .background-1,
+  .background-2,
+  .backgrounds {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+
+  .Mobile,
+  .lang,
+  .pizza,
+  .background-1 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .Mobile,
+  .lang,
+  .pizza,
+  .search,
+  .background-1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .Desktop,
+  .background,
+  .search,
+  .acc,
+  .menu {
+    display: none;
+  }
+
+  .logo a {
+    font-size: 16px;
+  }
+
+  .acc {
+    gap: 3px;
+  }
+
+  .ava {
+    content: url("M-images/Ava.png");
+  }
+
+  .in-out a {
+    font-size: 10px;
+  }
+
+  .word,
+  .nword {
+    font-size: 24px;
+  }
+
+  .pizza-s {
+    width: 50px;
+    height: 125px;
+  }
+
+  .name {
+    font-size: 6px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .btn-small {
+    content: url("M-images/Buy.png");
+    transform: translateY(-150%);
+  }
+
+  .order {
+    width: 164px;
+    height: 34.5px;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .order.icon::before {
+    content: url("M-images/Giỏ\ đặt\ hàng.png");
+    position: relative;
+    transform: translateY(5%);
+  }
+
+  .big-word {
+    position: absolute;
+    left: 30px;
+    top: 250px;
+    line-height: 20px;
+  }
+}

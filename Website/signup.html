@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth-compat.js"></script>
+    <title>Đăng ký</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="logo">
+        <img class="Desktop" src="Images/Logo.png" />
+        <img class="Mobile" src="M-images/Logo.png" />
+        <a href="index.html" class="pep">Peperonis</a>
+        <a href="index.html" class="piz">Pizza</a>
+      </div>
+      <div class="Desktop">
+        <div class="lang">
+          <div class="text vnn">
+            <p>NGÔN NGỮ</p>
+          </div>
+          <a href="#" class="V">Tiếng Việt</a>
+          <a href="#" class="E">Tiếng Anh</a>
+        </div>
+      </div>
+      <div class="search icon">
+        <input type="text" placeholder="Tìm kiếm..." />
+      </div>
+      <div class="acc">
+        <div class="in-out">
+          <a href="signin.html">ĐĂNG NHẬP</a>
+          <img class="Mobile" src="M-images/Vector-green.png" />
+          <img class="Desktop" src="Images/Vector đăng nhập.png" />
+          <a href="signup.html">ĐĂNG KÝ</a>
+        </div>
+        <a href="data.html" class="ava">Avatar</a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="index.html">TRANG CHỦ</a>
+          </li>
+          <li>
+            <a href="promotion.html">KHUYẾN MÃI</a>
+          </li>
+          <li>
+            <a href="order.html">ĐẶT HÀNG</a>
+          </li>
+          <li>
+            <a href="about.html">VỀ CHÚNG TÔI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--Kết thúc thanh điều hướng-->
+    <div class="Mobile">
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside class="sidebar">
+        <nav>
+          <div><a href="index.html">Trang chủ</a></div>
+          <div><a href="promotion.html">Khuyến mãi</a></div>
+          <div><a href="order.html">Đặt hàng</a></div>
+          <div><a href="about.html">Về chúng tôi</a></div>
+          <div><a href="signin.html">Đăng nhập</a></div>
+          <div><a href="signup.html">Đăng ký</a></div>
+        </nav>
+      </aside>
+    </div>
+    <!--Kết thúc thanh điều hướng mobile-->
+    <div class="Desktop">
+      <img class="bg-1" src="Images/Nền đăng ký 1.png" alt="" />
+      <img class="bg-2" src="Images/Nền đăng ký 2.png" alt="" />
+      <img class="bg-3" src="Images/Nền đăng ký 3.png" alt="" />
+      <img class="bg-4" src="Images/Nền đăng ký 4.png" alt="" />
+      <img class="bg-5" src="Images/Nền đăng ký 5.png" alt="" />
+      <img class="bg-6" src="Images/Nền đăng ký 6.png" alt="" />
+      <img class="bg-7" src="Images/Nền đăng ký 7.png" alt="" />
+      <img class="bg-8" src="Images/Nền đăng ký 8.png" alt="" />
+    </div>
+    <div class="Mobile">
+      <img class="bg1" src="M-images/Nền dk1.png" alt="" />
+      <img class="bg2" src="M-images/Nền dk2.png" alt="" />
+      <img class="bg3" src="M-images/Nền dk3.png" alt="" />
+      <img class="bg4" src="M-images/Nền dk4.png" alt="" />
+      <img class="bg5" src="M-images/Nền dk5.png" alt="" />
+      <img class="bg6" src="M-images/Nền dk6.png" alt="" />
+      <img class="bg7" src="M-images/Nền dk7.png" alt="" />
+      <img class="bg8" src="M-images/Nền dk8.png" alt="" />
+    </div>
+    <!--Kết thúc nền-->
+    <div class="things">
+      <div class="container">
+        <p class="signuptext">ĐĂNG KÝ</p>
+        <div class="background">
+          <div class="name-number">
+            <div class="name">
+              <input type="text" placeholder="Họ và tên" id="username" />
+            </div>
+            <div class="number">
+              <input type="number" placeholder="Số điện thoại" id="number" />
+            </div>
+          </div>
+          <div class="email end">
+            <input type="email" placeholder="Email" name="email" id="email" />
+          </div>
+          <div class="pass1-vd">
+            <div class="pass1" id="pass1">
+              <input type="password" placeholder="Mật khẩu" id="password" />
+            </div>
+            <p class="vd">Vd: 123Abc</p>
+          </div>
+          <div class="pass2">
+            <input type="password" placeholder="Nhập lại mật khẩu" id="pass2" />
+          </div>
+          <div class="smt">
+            <button id="submit-btn">TIẾP TỤC</button>
+            <div class="line-or">
+              <div class="line"></div>
+              <p class="or">HOẶC</p>
+              <div class="line"></div>
+            </div>
+            <div class="fb">
+              <img class="Desktop" src="Images/FB.png" alt="" />
+              <img class="Mobile" src="M-images/FB.png" alt="" />
+              <a href="#">Đăng ký bằng facebook</a>
+            </div>
+            <div class="gg">
+              <img class="Desktop" src="Images/GG.png" alt="" />
+              <img class="Mobile" src="M-images/GG.png" alt="" />
+              <a href="#">Đăng ký bằng google</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Kết thúc đăng ký-->
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

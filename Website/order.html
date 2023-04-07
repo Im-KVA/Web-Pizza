@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.order.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Đặt hàng</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="logo">
+        <img class="Desktop" src="Images/Logo.png" />
+        <img class="Mobile" src="M-images/Logo.png" />
+        <a href="index.html" class="pep">Peperonis</a>
+        <a href="index.html" class="piz">Pizza</a>
+      </div>
+      <div class="Desktop">
+        <div class="lang">
+          <div class="text vnn">
+            <p>NGÔN NGỮ</p>
+          </div>
+          <a href="#" class="V">Tiếng Việt</a>
+          <a href="#" class="E">Tiếng Anh</a>
+        </div>
+      </div>
+      <div class="search icon">
+        <input type="text" placeholder="Tìm kiếm..." />
+      </div>
+      <div class="acc">
+        <div class="in-out">
+          <a href="signin.html">ĐĂNG NHẬP</a>
+          <img class="Mobile" src="M-images/Vector-green.png" />
+          <img class="Desktop" src="Images/Vector đăng nhập.png" />
+          <a href="signup.html">ĐĂNG KÝ</a>
+        </div>
+        <a href="data.html" class="ava">Avatar</a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="index.html">TRANG CHỦ</a>
+          </li>
+          <li>
+            <a href="promotion.html">KHUYẾN MÃI</a>
+          </li>
+          <li>
+            <div class="order vector">
+              <a href="order.html">ĐẶT HÀNG</a>
+            </div>
+          </li>
+          <li>
+            <a href="about.html">VỀ CHÚNG TÔI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--Kết thúc thanh điều hướng-->
+    <div class="Mobile">
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside class="sidebar">
+        <nav>
+          <div><a href="index.html">Trang chủ</a></div>
+          <div><a href="promotion.html">Khuyến mãi</a></div>
+          <div><a href="order.html">Đặt hàng</a></div>
+          <div><a href="about.html">Về chúng tôi</a></div>
+          <div><a href="signin.html">Đăng nhập</a></div>
+          <div><a href="signup.html">Đăng ký</a></div>
+        </nav>
+      </aside>
+    </div>
+    <!--Kết thúc thanh điều hướng mobile-->
+    <div class="background">
+      <img class="Desktop" src="Images/Nền đặt hàng 1.png" />
+    </div>
+    <!--Kết thúc nền-->
+    <div class="button" id="button">
+      <div class="scroll">
+        <div class="btn-style">
+          <a href="#" class="btn"><img src="Images/Btn-1.png" /></a>
+          <p>Tất cả</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#pizza" class="btn"><img src="Images/Btn-2.png" /></a>
+          <p>Pizza</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#khaivi" class="btn"><img src="Images/Btn-3.png" /></a>
+          <p>Khai vị</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#khaivi" class="btn"><img src="Images/Btn-4.png" /></a>
+          <p>Salad</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#pasta" class="btn"><img src="Images/Btn-5.png" /></a>
+          <p>Mỳ pasta</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#monchinh" class="btn"><img src="Images/Btn-6.png" /></a>
+          <p>Món chính</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#comvamy" class="btn"><img src="Images/Btn-7.png" /></a>
+          <p>Cơm & mỳ</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#trangmieng" class="btn"><img src="Images/Btn-8.png" /></a>
+          <p>Tráng miệng</p>
+        </div>
+
+        <div class="btn-style">
+          <a href="#trangmieng" class="btn"><img src="Images/Btn-9.png" /></a>
+          <p>Đồ uống</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Kết thúc nút-->
+    <div class="container">
+      <div class="food" id="pizza">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Pizza</span>
+          <span class="list-com"
+            >(Cỡ S: 6 miếng 22cm | Cỡ L: 8 miếng 30cm)</span
+          >
+        </div>
+        <div class="m-scroll">
+          <ul class="food-list">
+            <li>
+              <div class="card">
+                <img src="Images/P1.png" alt="" />
+                <h2>#1 MARGHERITA</h2>
+                <p class="red">S 160.000 ₫<br />L 210.000 ₫<br /></p>
+                <p class="nom">Pizza xốt cà chua & phomai</p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P2.png" alt="" />
+                <h2>#2 HAWAIIAN</h2>
+                <p class="red">S 160.000 ₫<br />L 210.000 ₫<br /></p>
+                <p class="nom">Pizza xốt cà chua, jambong, dứa & phomai</p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P3.png" alt="" />
+                <h2>#3 BBQ BEEF</h2>
+                <p class="red">S 160.000 ₫<br />L 210.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza với thịt ba chỉ bò, jambong, hành tây, nấm xào, xốt BBQ
+                  và phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P4.png" alt="" />
+                <h2>#4 SAUSAGE SUPREME</h2>
+                <p class="red">S 160.000 ₫<br />L 210.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza với xúc xích, thịt bò xay, dứa và phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P5.png" alt="" />
+                <h2>#5 BOLOGNAISE</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza thịt bò xay, ngô hạt, ớt Đà Lạt, xốt Thousand Island &
+                  phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P6.png" alt="" />
+                <h2>#6 SEAFOOD MARYLAND</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza hải sản trộn xốt Thousand Island, hành tây, dứa & phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P7.png" alt="" />
+                <h2>#7 CHEESE TUNA</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza cá ngừ trộn xốt Thousand Island, ngô, hành tây xào và
+                  phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P8.png" alt="" />
+                <h2>#8 PEPPERONI</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">Pizza xúc xích tiêu cay, xốt cà chua & phomai</p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P9.png" alt="" />
+                <h2>#9 TERIYAKI CHICKEN</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza thịt gà trộn xốt Mayo-Teriyaki, hành tây, nấm, dứa &
+                  phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P10.png" alt="" />
+                <h2>#10 AVOCADO PRAWN</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza tôm, thịt ba chỉ hun khói, hành tây tím, xốt quả bơ̛ &
+                  phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P11.png" alt="" />
+                <h2>#11 BEEFY</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza jămbông, xúc xích tiêu cay, thịt bò xay, xốt cà chua &
+                  phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P12.png" alt="" />
+                <h2>#12 CAESAR SEAFOOD</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza sò điệp, mực vòng, thịt cua, thịt ba chỉ hun khói, hành
+                  tây tím, xốt Caesar &...
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P13.png" alt="" />
+                <h2>#13 JAPANESE SEAFOOD</h2>
+                <p class="red">S 185.000 ₫<br />L 265.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza hải sản tươi với nấm đùi gà, vừng, lá rong biển, xốt kem
+                  mù tạt & phomai...
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P14.png" alt="" />
+                <h2>#14 MARINARA</h2>
+                <p class="red">S 185.000 ₫<br />L 265.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza hải sản tươi, tỏi xay, xốt cà chua & phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P15.png" alt="" />
+                <h2>#15 SEAFOOD MORNAY</h2>
+                <p class="red">S 185.000 ₫<br />L 265.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza tôm, mực, cua thanh, xốt bechamel & phomai
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P16.png" alt="" />
+                <h2>#16 THAI TOM YUM SEAFOOD</h2>
+                <p class="red">S 185.000 ₫<br />L 265.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza với tôm, thịt cua, mực, ngao, ngô, hành tây, nấm, ớt
+                  tươi , xốt kem Tom Yum...
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P17.png" alt="" />
+                <h2>#17 BRANDY SEAFOOD</h2>
+                <p class="red">S 185.000 ₫<br />L 265.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza với tôm, thịt cua, sò điệp, ớt xanh ớt đỏ, xốt kem
+                  brandy và phomai.
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <img src="Images/P18.png" alt="" />
+                <h2>BUILD YOUR OWN or 1/2 & 1/2 PIZZA</h2>
+                <p class="red">S 170.000 ₫<br />L 240.000 ₫<br /></p>
+                <p class="nom">
+                  Pizza chọn topping theo sở thích hoặc Pizza 2 trong 1
+                </p>
+                <button class="list-btn">MUA</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="food" id="khaivi">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Khai vị và salad</span>
+        </div>
+        <ul class="food-list">
+          <li>
+            <div class="card">
+              <img src="Images/SS1.png" alt="" />
+              <h2>GARLIC BREAD</h2>
+              <p class="red">60.000 ₫</p>
+              <p class="nom">Bánh mì bơ tỏi</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS2.png" alt="" />
+              <h2>CREAMY CHICKEN & CORN SOUP</h2>
+              <p class="red">80.000 ₫</p>
+              <p class="nom">Súp kem gà & ngô</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS3.png" alt="" />
+              <h2>AMERICAN FRIES</h2>
+              <p class="red">85.000 ₫</p>
+              <p class="nom">Khoai tây chiên kiểu Mỹ</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS4.png" alt="" />
+              <h2>CHICKEN BASKET</h2>
+              <p class="red">115.000 ₫</p>
+              <p class="nom">
+                Cánh gà & gà viên chiên giòn dùng kèm khoai tây chiên
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS5.png" alt="" />
+              <h2>RIB TIP'S</h2>
+              <p class="red">115.000 ₫</p>
+              <p class="nom">
+                5 miếng sườn nhập khẩu dùng kèm khoai tây chiên xóc bơ tỏi
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS6.png" alt="" />
+              <h2>KOREAN CHICKEN YAYA</h2>
+              <p class="red">115.000 ₫</p>
+              <p class="nom">
+                Gà rán giòn, cay kiểu Hàn Quốc, ăn kèm khoai tây xóc bơ tỏi
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS7.png" alt="" />
+              <h2>PEPP'S SPECIAL SALAD</h2>
+              <p class="red">110.000 ₫</p>
+              <p class="nom">Salat rong biển với trứng tôm và xốt đặc biệt</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/SS8.png" alt="" />
+              <h2>CREAMY RUSSIAN SALAD</h2>
+              <p class="red">110.000 ₫</p>
+              <p class="nom">
+                Khoai tây, jambong, đậu Hà Lan, cà rốt, dưa chuột muối, ngô hạt,
+                trứng và xốt mayonnaise
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="food" id="pasta">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Pasta</span>
+        </div>
+        <ul class="food-list">
+          <li>
+            <div class="card">
+              <img src="Images/Pasta1.png" alt="" />
+              <h2>CREAMY CHICKEN</h2>
+              <p class="red">140.000 ₫</p>
+              <p class="nom">Mỳ Ý với thịt gà, nấm và xốt kem</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta2.png" alt="" />
+              <h2>BOLOGNAISE</h2>
+              <p class="red">150.000 ₫</p>
+              <p class="nom">Mỳ Ý với thịt bò xay và xốt cà chua</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta3.png" alt="" />
+              <h2>STEAK & MUSHROOM</h2>
+              <p class="red">150.000 ₫</p>
+              <p class="nom">Mỳ Ý với thịt bò, nấm và xốt kem</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta4.png" alt="" />
+              <h2>CARBONARA</h2>
+              <p class="red">150.000 ₫</p>
+              <p class="nom">Mỳ Ý với jambong và xốt kem</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta5.png" alt="" />
+              <h2>SPAGHETTI SEAFOOD</h2>
+              <p class="red">160.000 ₫</p>
+              <p class="nom">
+                Mỳ Ý với ngao, tôm, mực, cá. Lựa chọn xốt kem tỏi hoặc xốt cà
+                chua cay
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta6.png" alt="" />
+              <h2>TOM YUM SPAGHETTI</h2>
+              <p class="red">160.000 ₫</p>
+              <p class="nom">
+                Mỳ Ý với Tôm áp chảo, ngao, mực, nấm đùi gà, hành tây, mùi ta và
+                xốt Tom...
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta7.png" alt="" />
+              <h2>BOLOGNAISE BAKE</h2>
+              <p class="red">180.000 ₫</p>
+              <p class="nom">
+                Mỳ Ý và thịt bò nghiền, xốt bechamel bỏ lò với phomai
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Pasta8.png" alt="" />
+              <h2>BEEF LASAGNA</h2>
+              <p class="red">180.000 ₫</p>
+              <p class="nom">
+                Thịt bò nghiền bỏ lò với mỳ lá, xốt bechamel với phomai
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="food" id="monchinh">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Món chính</span>
+        </div>
+        <ul class="food-list">
+          <li>
+            <div class="card">
+              <img src="Images/Main1.png" alt="" />
+              <h2>BIG AUSSIE SAUSAGE</h2>
+              <p class="red">130.000 ₫</p>
+              <p class="nom">
+                Xúc xích với hành xào. Dùng kèm khoai tây xóc bơ tỏi và xốt cay
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Main2.png" alt="" />
+              <h2>PEPP’S FRIED CHICKEN</h2>
+              <p class="red">150.000 ₫</p>
+              <p class="nom">
+                Đùi gà tẩm bột chiên giòn. Lựa chọn 4 miếng hoặc 6 miếng
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Main3.png" alt="" />
+              <h2>SIZZLING SLICED STEAK</h2>
+              <p class="red">325.000 ₫</p>
+              <p class="nom">
+                250gr Thịt bò Mỹ nhập khẩu thái lát, dùng kèm khoai tây bơ tỏi,
+                hành tây, đậu Hà...
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Main4.png" alt="" />
+              <h2>RACK OF RIBS</h2>
+              <p class="red">210.000 ₫</p>
+              <p class="nom">
+                Lựa chọn 4 / 6 / 8 dẻ sườn dài nhập khẩu nướng xốt BBQ
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="food" id="comvamy">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Cơm & mỳ</span>
+        </div>
+        <ul class="food-list">
+          <li>
+            <div class="card">
+              <img src="Images/RN1.png" alt="" />
+              <h2>SEAFOOD FRIED RICE</h2>
+              <p class="red">160.000 ₫</p>
+              <p class="nom">Cơm chiên rau củ với hải sản</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/RN2.png" alt="" />
+              <h2>COMBINATION FRIED RICE</h2>
+              <p class="red">150.000 ₫</p>
+              <p class="nom">Cơm chiên thập cẩm với tôm, gà và thịt bò</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/RN3.png" alt="" />
+              <h2>THAI PORK LARB NOODLE</h2>
+              <p class="red">160.000 ₫</p>
+              <p class="nom">
+                Mỳ trứng xào giòn cùng thịt nạc vai, tỏi tây, rau thơm, ớt và
+                xốt Szechuan
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/RN4.png" alt="" />
+              <h2>SPICY KOREAN TOKBOKKI</h2>
+              <p class="red">160.000 ₫</p>
+              <p class="nom">
+                Bánh gạo Hàn Quốc, chả cá Hàn Quốc, xúc xích, nấm, tỏi tây,
+                phomai Mozza, xốt cay
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="food" id="trangmieng">
+        <div class="list">
+          <img class="Desktop" src="Images/Line.png" alt="" />
+          <img class="Mobile" src="M-images/Line.png" alt="" />
+          <span class="list-text">Tráng miệng và đồ uống</span>
+        </div>
+        <ul class="food-list">
+          <li>
+            <div class="card">
+              <img src="Images/Dessert1.png" alt="" />
+              <h2>CHOCOLATE BROWNIE</h2>
+              <p class="red">50.000 ₫</p>
+              <p class="nom">Bánh sô cô la dùng kèm kem vani</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Dessert2.png" alt="" />
+              <h2>CARAMEL</h2>
+              <p class="red">30.000 ₫</p>
+
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink1.png" alt="" />
+              <h2>COKE</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink2.png" alt="" />
+              <h2>COKE ZERO</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink3.png" alt="" />
+              <h2>SODA</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink4.png" alt="" />
+              <h2>NƯỚC CHANH</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink5.png" alt="" />
+              <h2>NƯỚC DƯA HẤU</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink6.png" alt="" />
+              <h2>NƯỚC CHANH LEO</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink7.png" alt="" />
+              <h2>NƯỚC CAM</h2>
+              <p class="red">55.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink8.png" alt="" />
+              <h2>TRÀ LIPTON</h2>
+              <p class="red">30.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink9.png" alt="" />
+              <h2>TRÀ LIPTON VỚI SỮA</h2>
+              <p class="red">35.000 ₫</p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img src="Images/Drink10.png" alt="" />
+              <h2>ICE CREAM SHAKES</h2>
+              <p class="red">55.000 ₫</p>
+              <p class="nom">
+                Chọn kem Vani/ Dâu/ Socola.<br />
+                Xay cùng sữa tươi và đá
+              </p>
+              <button class="list-btn">MUA</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="notthing"></div>
+      <a class="smt" href="#button"><img src="Images/Up.png" alt="" /></a>
+    </div>
+    <script src="main.js" type="module"></script>
+    <!--Kết thúc danh sách đồ ăn-->
+  </body>
+</html>
